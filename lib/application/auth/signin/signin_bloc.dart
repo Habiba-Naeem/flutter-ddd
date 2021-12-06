@@ -6,6 +6,7 @@ import 'package:ddd_app/domain/auth/i_auth_facade.dart';
 import 'package:ddd_app/domain/core/email/email.dart';
 import 'package:ddd_app/domain/core/password/password.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'signin_event.dart';
@@ -13,6 +14,7 @@ part 'signin_state.dart';
 
 part 'signin_bloc.freezed.dart';
 
+@injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   final IAuthFacade _authFacade;
   SignInBloc(this._authFacade) : super(SignInState.initial());
@@ -34,16 +36,16 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
           authFailureOrSuccessOption: none(),
         );
       },
-      signInWithGooglePressed: (event) async* {
-        yield state.copyWith(
-          isSubmitting: true,
-          authFailureOrSuccessOption: none(),
-        );
-        final failureOrSuccess = await _authFacade.signInWithGoogle();
-        yield state.copyWith(
-            isSubmitting: false,
-            authFailureOrSuccessOption: some(failureOrSuccess));
-      },
+      // signInWithGooglePressed: (event) async* {
+      //   yield state.copyWith(
+      //     isSubmitting: true,
+      //     authFailureOrSuccessOption: none(),
+      //   );
+      //   final failureOrSuccess = await _authFacade.signInWithGoogle();
+      //   yield state.copyWith(
+      //       isSubmitting: false,
+      //       authFailureOrSuccessOption: some(failureOrSuccess));
+      // },
       signInWithEmailAndPasswordPressed: (event) async* {
         Either<AuthFailure, Unit> failureOrSuccess;
         yield state.copyWith(
