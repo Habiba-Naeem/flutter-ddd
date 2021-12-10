@@ -35,6 +35,7 @@ dependencies:
   build_runner: ^2.1.5
   bloc: ^8.0.1
   flutter_bloc: ^8.0.0
+<<<<<<< HEAD
   firebase_core:
   firebase_auth:
   #google_sign_in:
@@ -47,6 +48,11 @@ dev_dependencies:
   equatable: ^2.0.2
   injectable_generator:
   lint:
+=======
+
+dev_dependencies:
+  equatable: ^2.0.2
+>>>>>>> 57ba4aeda6a84882316dbfdcd82671970eef2ae3
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
