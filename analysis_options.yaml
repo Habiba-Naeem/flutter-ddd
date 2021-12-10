@@ -27,7 +27,6 @@ linter:
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
-<<<<<<< HEAD
 
 inclue: package:lint/analysis_options.yaml 
 analyzer:
@@ -35,5 +34,3 @@ analyzer:
     missing_return: error
     missing_required_param: error
     must_be_immutable: error
-=======
->>>>>>> 57ba4aeda6a84882316dbfdcd82671970eef2ae3
