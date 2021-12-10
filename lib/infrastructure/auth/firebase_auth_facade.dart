@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import 'package:dartz/dartz.dart';
+import 'package:ddd_app/domain/auth/auth_failure.dart';
+import 'package:ddd_app/domain/auth/i_auth_facade.dart';
+import 'package:ddd_app/domain/auth/user.dart' as domain;
+import 'package:ddd_app/domain/core/email/email.dart';
+import 'package:ddd_app/domain/core/password/password.dart';
+import 'package:ddd_app/infrastructure/auth/firebase_user_mapper.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:google_sign_in/google_sign_in.dart';
+import 'package:injectable/injectable.dart';
+=======
 import 'package:ddd_app/domain/auth/auth_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:ddd_app/domain/auth/i_auth_facade.dart';
@@ -8,6 +20,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 //import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import './firebase_user_mapper.dart';
+>>>>>>> a06fbfe6452ff9e91094a29ffcac83b4c110b947
 
 @lazySingleton
 @injectable
@@ -20,6 +33,12 @@ class FirebaseAuthFacade implements IAuthFacade {
     this._auth,
     //this._googleSignIn,
   );
+<<<<<<< HEAD
+
+  @override
+  Future<Option<domain.User>> getSignedInUser() async =>
+      optionOf(_auth.currentUser!.toDomain());
+=======
   // @override
   // Future<Option<User>> getSignedInUser() async{
   //   if(_auth.currentUser != null){
@@ -30,6 +49,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   @override
   Future<Option<User>> getSignedInUser() async =>
       optionOf(_auth.currentUser?.toDomain());
+>>>>>>> a06fbfe6452ff9e91094a29ffcac83b4c110b947
 
   @override
   Future<Either<AuthFailure, Unit>> signInWithEmailAndPassword({
@@ -99,6 +119,10 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<void> signOut() async {
+<<<<<<< HEAD
+    await _auth.signOut();
+=======
    await _auth.signOut();
+>>>>>>> a06fbfe6452ff9e91094a29ffcac83b4c110b947
   }
 }
